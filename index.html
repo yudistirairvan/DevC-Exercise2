@@ -32,7 +32,8 @@
     var Bil2 = document.getElementById('Nilai2');
     var hasil = document.getElementById('p');
     var calculateButtonSum = document.getElementById('getTotal');
-    var OprasiBil = document.getElementById('OperasiBil').value(value);
+    var select = document.getElementById('OprasiBil');
+    var OprasiBil = select.option[select.selectedIndex].text;
 
 
      calculateButtonSum.onclick = function() {
