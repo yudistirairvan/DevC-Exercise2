@@ -1,11 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Exercise 2</title>
+   
 </head>
 <body>
     <center>
         <h1>Kalkulator</h1>
     </center>
+
+    
+    <input type="text" id="Nilai1" placeholder="Input Nilai 1">
+    <br>
+    <select  id="OprasiBil" >
+        <option value="+">+ Tambah</option>
+        <option value="-">- Kurang</option>
+        <option value="/">/ Bagi</option>
+        <option value="*">* Kali</option>
+        <option value="%">% MOd</option>
+    </select>
+    <br>
+    <input type="text" id="Nilai2" placeholder="Input Nilai 2">
+    <br>
+    <button type="submit" id="getTotal"> Hitung </button>
+
+    <br>
+    <script>
+    var Bil1 = document.getElementById('Nilail');
+    var Bil2 = document.getElementById('Nilai2');
+    var hasil = document.getElementById('p');
+    var calculateButtonSum = document.getElementById('getTotal');
+    var OprasiBil = document.getElementById('OperasiBil').value(value);
+
+
+     calculateButtonSum.onclick = function() {
+       
+
+        
+        if (OprasiBil="+") {
+            var total = parsInt(Bil1.value) + parsInt(Bil2.value);
+
+            document.querySelector('p').textContent = 'total';
+
+        } else if (OprasiBil="-") {
+            var total = parsInt(Bil1.value) - parsInt(Bil2.value);
+            document.querySelector('p').textContent = 'total';
+
+        } else if (OprasiBil="/") {
+            var total = parsInt(Bil1.value) / parsInt(Bil2.value);
+            document.querySelector('p').textContent = 'total';
+
+        }else if (OprasiBil="*") {
+            var total = parsInt(Bil1.value) * parsInt(Bil2.value);
+            document.querySelector('p').textContent = 'total';
+
+        }else if (OprasiBil="%") {
+            document.querySelector('p').textContent = 'total';
+
+        }else
+
+        document.querySelector('p').textContent = 'Isi Data terlebih Dahulu!';
+        
+    }
+    </script>
+    <p>Hasil = ... </p>
 </body>
 </html>
