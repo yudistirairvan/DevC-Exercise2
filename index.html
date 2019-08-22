@@ -27,45 +27,53 @@
     <button type="submit" id="getTotal"> Hitung </button>
 
     <br>
+    
     <script>
-    var Bil1 = document.getElementById('Nilail');
-    var Bil2 = document.getElementById('Nilai2');
-    var hasil = document.getElementById('p');
+
+   
+   
     var calculateButtonSum = document.getElementById('getTotal');
     var select = document.getElementById('OprasiBil');
-    var OprasiBil = select.option[select.selectedIndex].text;
-
+  
 
      calculateButtonSum.onclick = function() {
-       
-
+        var Bil1 = document.getElementById('Nilai1').value;
+        var Bil2 = document.getElementById('Nilai2').value;
+        var a= parseInt(Bil1);
+        var b= parseInt(Bil2);
+        var OprasiBil = select.options[select.selectedIndex].value;
+        // alert("cek "+OprasiBil);
         
-        if (OprasiBil="+") {
-            var total = parsInt(Bil1.value) + parsInt(Bil2.value);
+        if (OprasiBil=="+") {
+            var total = a + b;
+            
+            document.getElementById("hasil").innerHTML = "Hasil dari "+a+ " + "+ b +" = "+total;
 
-            document.querySelector('p').textContent = 'total';
+        } else if (OprasiBil=="-") {
+            var total = a - b;
+            document.getElementById("hasil").innerHTML = "Hasil dari "+a+ " - "+ b +" = "+total;
 
-        } else if (OprasiBil="-") {
-            var total = parsInt(Bil1.value) - parsInt(Bil2.value);
-            document.querySelector('p').textContent = 'total';
+        } else if (OprasiBil=="/") {
+            var total = a / b;
+            document.getElementById("hasil").innerHTML = "Hasil dari "+a+ " / "+ b +" = "+total;
 
-        } else if (OprasiBil="/") {
-            var total = parsInt(Bil1.value) / parsInt(Bil2.value);
-            document.querySelector('p').textContent = 'total';
+        }else if (OprasiBil=="*") {
+            var total = a * b;
+            document.getElementById("hasil").innerHTML = "Hasil dari "+a+ " X "+ b +" = "+total;
+        }else if (OprasiBil=="%") {
+            var total = a % b;
+            document.getElementById("hasil").innerHTML = "Hasil dari "+a+ " % "+ b +" = "+total;
 
-        }else if (OprasiBil="*") {
-            var total = parsInt(Bil1.value) * parsInt(Bil2.value);
-            document.querySelector('p').textContent = 'total';
+        }else {
+            document.querySelector('p').textContent = 'Isi Data terlebih Dahulu!';
 
-        }else if (OprasiBil="%") {
-            document.querySelector('p').textContent = 'total';
+        }
 
-        }else
-
-        document.querySelector('p').textContent = 'Isi Data terlebih Dahulu!';
+       
         
     }
     </script>
-    <p>Hasil = ... </p>
+
+    <div id="hasil">Hasil = ... </div>
 </body>
 </html>
